@@ -19,7 +19,7 @@ def calc_comisiones(empleados, ventas, vendedor_ventas):
                 valor_venta = ventas.get(id_venta)
                 pago_venta = valor_venta * comision
                 pago_total += pago_venta
-            pagos.update({emp_id : pago_total})
+            pagos.update({emp_id: pago_total})
     print(pagos)
     return pagos
 
@@ -31,14 +31,14 @@ empleados = {
 }
 
 ventas = {
-   10: 227.00,
-   4: 333.11,
-   22: 101.00
+    10: 227.00,
+    4: 333.11,
+    22: 101.00
 }
 
 vendedor_ventas = {
-   1: [10, 4],
-   2: [22]
+    1: [10, 4],
+    2: [22]
 }
 
 calc_comisiones(empleados, ventas, vendedor_ventas)
