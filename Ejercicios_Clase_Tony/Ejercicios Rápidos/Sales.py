@@ -10,6 +10,9 @@ comisión por venta realizada).
 
 def calc_comisiones(empleados, ventas, vendedor_ventas):
     pagos = {}
+    # el método items() regresa un objeto vista que muestra una lista del diccionario dado en un par de tuplas
+    # ej. sales = { 'apple': 2, 'orange': 3, 'grapes': 4 }
+    # print(sales.items()) -> dict_items([('grapes', 4), ('apple', 2), ('orange', 3)])
     for emp_id, emp_tupla in empleados.items():
         nombre, comision = emp_tupla
         lista_ventas = vendedor_ventas.get(emp_id)
@@ -31,14 +34,14 @@ empleados = {
 }
 
 ventas = {
-    10: 227.00,
-    4: 333.11,
-    22: 101.00
+   10: 227.00,
+   4: 333.11,
+   22: 101.00
 }
 
 vendedor_ventas = {
-    1: [10, 4],
-    2: [22]
+   1: [10, 4],
+   2: [22]
 }
 
 calc_comisiones(empleados, ventas, vendedor_ventas)
