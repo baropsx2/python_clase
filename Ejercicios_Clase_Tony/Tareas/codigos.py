@@ -52,8 +52,20 @@ def get_pais(let_inic):
 
 
 def agrega_pais(dic_codigos, pais, codigo):
-   # dic_codigos[pais] = codigo
-    dic_codigos.update({pais: codigo})
+    pais_key = []
+    codigo_val = []
+    dicExtra = {}
+    for key, val in dic_codigos.items():
+        if key == pais:
+            pais_key.append(key)
+        elif val == codigo:
+            codigo_val.append(val)
+        else:
+            pais_key.append(key), codigo_val.append(val)
+
+    dicExtra = dict(zip(pais_key, codigo_val))
+    dicExtra.update(dic_codigos)
+    print(dic_codigos)
     return dic_codigos
 
 
@@ -71,6 +83,3 @@ get_paises(codigos)
 
 get_pais("A")
 get_pais("M")
-
-agrega_pais(codigos, "USA", 1)
-agrega_pais(codigos, "Mexico", 54)
